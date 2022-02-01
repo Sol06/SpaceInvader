@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Szenen/Feld/Field.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 512, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 512, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 11, 300 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 300 )
+
+[node name="Feld" type="Node2D"]
+
+[node name="ObereWand" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObereWand"]
+position = Vector2( 512, -10 )
+shape = SubResource( 1 )
+
+[node name="RechteWand" type="StaticBody2D" parent="."]
+position = Vector2( 512, 512 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RechteWand"]
+position = Vector2( 0, 98 )
+shape = SubResource( 2 )
+
+[node name="UntereWand" type="StaticBody2D" parent="RechteWand/CollisionShape2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RechteWand/CollisionShape2D/UntereWand"]
+position = Vector2( 523, -310 )
+shape = SubResource( 3 )
+
+[node name="LinkeWand" type="StaticBody2D" parent="."]
+position = Vector2( 0, 256 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LinkeWand"]
+position = Vector2( -10, 44 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+scale = Vector2( 1, 1.17187 )
+texture = ExtResource( 1 )
