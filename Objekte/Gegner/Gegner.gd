@@ -15,3 +15,14 @@ func hit(damage):
 	leben -= damage
 	if leben <= 0:
 		queue_free()
+
+
+func bin_getroffen(body):
+	print("bin getroffen")
+	hide()
+	queue_free()
+
+func verlasse_Screen(area):
+	print("bin weg")
+	queue_free()
+	

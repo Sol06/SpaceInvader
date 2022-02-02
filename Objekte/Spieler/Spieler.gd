@@ -31,10 +31,6 @@ func _physics_process(_delta):
 	
 #Der Spieler feuert einen Laserschuss.
 func shoot():
-	#var pos = 
-	print("Schiessen...")
-	var pos = get_position()
-	print(pos)
 	var geschoss = Geschoss.instance()
 	owner.add_child(geschoss)
 	geschoss.transform = global_transform
