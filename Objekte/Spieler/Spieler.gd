@@ -5,6 +5,7 @@ export (int) var speed = 700
 
 #Deklariert die Menge an Leben, die der Spieler hat.
 var leben = 3
+var Geschoss = preload("res://Objekte/Spieler/Geschoss.tscn")
 
 var velocity = Vector2()
 
@@ -24,13 +25,20 @@ func get_input():
 	velocity = velocity.normalized() * speed
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	velocity = move_and_slide(velocity)
 	
 #Der Spieler feuert einen Laserschuss.
 func shoot():
-	pass
+	#var pos = 
+	print("Schiessen...")
+	var pos = get_position()
+	print(pos)
+	var geschoss = Geschoss.instance()
+	owner.add_child(geschoss)
+	geschoss.transform = global_transform
+	
 
 #Gibt an, wann der Spieler zerstört wird.
 func hit(damage):

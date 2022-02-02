@@ -1,8 +1,8 @@
 extends Area2D
 
-var GeschossSpeed = 150
+var geschossSpeed = 450
 
-var GeschossSchaden = 1
+var geschossSchaden = 1
 
-func _ready():
-	pass 
+func _physics_process(delta):
+	position -= transform.y * geschossSpeed * delta
