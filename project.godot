@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "KinematicBody2D",
+"base": "Area2D",
+"class": "Geschoss",
+"language": "GDScript",
+"path": "res://Objekte/Spieler/Geschoss.gd"
+}, {
+"base": "Area2D",
 "class": "Spieler",
 "language": "GDScript",
 "path": "res://Objekte/Spieler/Spieler.gd"
 } ]
 _global_script_class_icons={
+"Geschoss": "",
 "Spieler": ""
 }
 
