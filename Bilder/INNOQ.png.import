@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Field.png-b3fa33d2dd32f10ce5dcff79050c3412.stex"
+path="res://.import/INNOQ.png-b951a3c38d569e87bfc053d51f5220cc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Szenen/Feld/Field.png"
-dest_files=[ "res://.import/Field.png-b3fa33d2dd32f10ce5dcff79050c3412.stex" ]
+source_file="res://Bilder/INNOQ.png"
+dest_files=[ "res://.import/INNOQ.png-b951a3c38d569e87bfc053d51f5220cc.stex" ]
 
 [params]
 

@@ -10,26 +10,24 @@ script = ExtResource( 4 )
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_right = 100
-custom_constants/margin_top = 100
-custom_constants/margin_left = 100
-custom_constants/margin_bottom = 100
+custom_constants/margin_right = 0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
-margin_left = 100.0
-margin_top = 100.0
-margin_right = 924.0
-margin_bottom = 500.0
+margin_right = 1024.0
+margin_bottom = 600.0
 texture = ExtResource( 2 )
 expand = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/TextureRect"]
-margin_left = 157.0
-margin_top = 195.0
-margin_right = 364.0
+margin_left = 390.0
+margin_top = 200.0
+margin_right = 300.0
 margin_bottom = 400.0
 custom_constants/separation = 100
 __meta__ = {

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Bilder/laserBlue02.png" type="Texture" id=1]
+[ext_resource path="res://Bilder/laserRed06.png" type="Texture" id=1]
 [ext_resource path="res://Objekte/Spieler/Geschoss.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -22,5 +22,5 @@ texture = ExtResource( 1 )
 position = Vector2( 2, -5 )
 shape = SubResource( 1 )
 
-[connection signal="area_entered" from="." to="." method="_on_Laser_area_entered"]
 [connection signal="area_entered" from="." to="." method="_on_Geschoss_area_entered"]
+[connection signal="area_entered" from="." to="." method="_on_Laser_area_entered"]

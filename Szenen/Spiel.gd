@@ -1,7 +1,7 @@
 extends Node
 
 var SCORE = 0
-var LEBEN = 1
+var LEBEN = 3
 
 var score = SCORE
 var leben = LEBEN

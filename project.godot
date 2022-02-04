@@ -26,15 +26,32 @@ _global_script_class_icons={
 
 [application]
 
-config/name="2D Spiel"
+config/name="Space Invader"
 run/main_scene="res://Szenen/Spiel.tscn"
 config/icon="res://Bilder/icon.png"
+
+[display]
+
+window/size/resizable=false
+window/size/fullscreen=true
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [input]
 
 shoot={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+verlasse={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+restart={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777221,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 
