@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Szenen/Feld/Feld.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objekte/Spieler/Spieler.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objekte/Gegner/GegnerSpawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Szenen/Spiel.gd" type="Script" id=4]
+[ext_resource path="res://Szenen/GameOverScreen.tscn" type="PackedScene" id=5]
 
 [node name="Spiel" type="Node"]
 script = ExtResource( 4 )
@@ -27,14 +28,18 @@ __meta__ = {
 }
 
 [node name="Leben" type="Label" parent="."]
-margin_left = 935.0
+margin_left = 871.0
 margin_top = 26.0
-margin_right = 999.0
+margin_right = 1007.0
 margin_bottom = 40.0
-text = "LEBEN:"
+text = "guble"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="GameOverScreen" parent="." instance=ExtResource( 5 )]
+
+[connection signal="binGetroffen" from="Spieler" to="." method="_on_Spieler_istGetroffen"]
 [connection signal="schiesse_laser" from="Spieler" to="." method="_on_Spieler_schiesse_laser"]
 [connection signal="add_score" from="GegnerSpawner" to="." method="score"]
+[connection signal="restart_triggered" from="GameOverScreen" to="." method="game_restart"]

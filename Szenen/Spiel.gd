@@ -1,23 +1,42 @@
 extends Node
 
-#Start & Stopp 
-var Laser = preload("res://Objekte/Spieler/Geschoss.tscn")
+var SCORE = 0
+var LEBEN = 1
 
-var score = 0
+var score = SCORE
+var leben = LEBEN
 
-#func leben():
-#	leben -= 1
-#	$Leben.text = "LEBEN: " + str(leben)
+func _ready():
+	game_start()
 
 func score():
 	score += 10
 	$Score.text = "MITARBEITER ABGEWORBEN: " + str(score)
 
-
-func _on_Spieler_schiesse_laser(location):
-	var l = Laser.instance()
-	l.global_position = location
-	add_child(l)
+func game_start():
+	$Leben.text = "PANZERUNG: " + str(leben)
+	$Score.text = "MITARBEITER ABGEWORBEN: " + str(score)
+	$GameOverScreen.hide_me()
 
 func game_over():
-	pass
+	print("Spiel ist rum!!")
+	remove_child($GegnerSpawner)
+	$GameOverScreen.show_me()
+
+
+func _on_Spieler_istGetroffen():
+	leben -= 1
+	$Leben.text = "PANZERUNG: " + str(leben)
+	if (leben <= 0):
+		game_over()
+
+
+func game_restart():
+	# GegnerSpawner erneut instanziieren
+	# Spieler erneut instanziieren
+	get_tree().reload_current_scene()
+	# score / leben neu setzen
+	leben = LEBEN
+	score = SCORE
+	print ("neustart")
+	game_start() # ausführen

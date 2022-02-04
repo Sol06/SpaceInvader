@@ -2,8 +2,9 @@ class_name Spieler extends Area2D
 
 signal schiesse_laser(location)
 
+var Laser = preload("res://Objekte/Spieler/Geschoss.tscn")
 
-signal binTot
+signal binGetroffen
 
 onready var GeschossPosition = $GeschossPosition
 
@@ -13,7 +14,6 @@ var screen_size
 
 #Deklariert die Menge an Leben, die der Spieler hat.
 var leben = 3
-var Geschoss = preload("res://Objekte/Spieler/Geschoss.tscn")
 
 var velocity = Vector2()
 
@@ -34,8 +34,8 @@ func _process(delta):
 	velocity = velocity.normalized() * speed
 
 	position += velocity * delta
-	position.x = clamp(position.x, 15, screen_size.x)
-	position.y = clamp(position.y, 15, screen_size.y)
+	position.x = clamp(position.x, 15, screen_size.x-34)
+	position.y = clamp(position.y, 15, screen_size.y-34)
 
 func _input(event):
 	if event.is_action_pressed("shoot"):
@@ -43,14 +43,18 @@ func _input(event):
 	
 #Der Spieler feuert einen Laserschuss.
 func shoot():
-	emit_signal("schiesse_laser", GeschossPosition.global_position)
+	var location = GeschossPosition.global_position
+	#emit_signal("schiesse_laser", GeschossPosition.global_position)
+	var l = Laser.instance()
+	l.global_position = location
+	owner.add_child(l)
 	
 #Gibt an, wann der Spieler zerstört wird.
 func take_damage(damage):
 	leben -= damage
+	emit_signal("binGetroffen")
 	if leben <= 0:
 		print("Spieler: bin tot")
-		emit_signal("binTot")
 		queue_free()
 
 func _on_Spieler_area_entered(area):

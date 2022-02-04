@@ -4,6 +4,8 @@ signal add_score
 
 var spawn_positionen = null
 
+func _ready():
+	print("Ich existiere!!!!")
 
 #Platziert einen Gegner auf einer der beliebigen Positionen.
 func spawn_gegner():
